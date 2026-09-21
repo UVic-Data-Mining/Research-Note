@@ -56,21 +56,6 @@ rather than randomly mixing all URLs before performing an 80/20 train-test split
 
 This is important because our main question is whether AI-generated training data helps the detector recognise **future or unseen real phishing URLs**.
 
-## What We Need to Look For
-
-When reading this paper, focus on:
-
-- How is the dataset collected?
-- Are raw URLs provided?
-- Does each URL have a timestamp or collection date?
-- How do they construct the training and testing sets?
-- Do they use chronological splits?
-- How do they prevent data leakage?
-- How do they deal with duplicate or similar URLs?
-- What URL features are available?
-- What baseline classifiers do they use?
-- What evaluation metrics do they use?
-
 ## How We Could Build on It
 
 Use their realistic evaluation setup but introduce different training conditions:
@@ -121,21 +106,6 @@ Improve generalisation?
 
 Therefore, we are addressing a similar problem using a different approach.
 
-## What We Need to Look For
-
-Focus on:
-
-- How do they define generalisation?
-- Which datasets do they use?
-- How do they perform cross-dataset testing?
-- How much does performance decrease?
-- Which classifiers do they use?
-- Which features do they use?
-- What evaluation metrics do they use?
-- Why do they think models fail to generalise?
-- How is their experiment structured?
-- What limitations do they identify?
-
 ## How We Could Build on It
 
 Instead of adapting the model after encountering another domain, investigate whether:
@@ -184,27 +154,6 @@ Our main difference would instead be:
 
 > Does generated augmentation improve detection of **temporally newer, real phishing URLs that were not available during training?**
 
-## What We Need to Look For
-
-We should inspect this paper particularly carefully.
-
-Focus on:
-
-- How exactly do they generate URLs?
-- What generative model do they use?
-- How many synthetic URLs are generated?
-- How do they validate generated URLs?
-- Do they remove duplicates?
-- What percentage of the training dataset becomes synthetic?
-- What baseline do they compare against?
-- Do they compare against simple augmentation?
-- How do they split the dataset?
-- Is the test set chronologically newer?
-- Is the test set completely real?
-- Could generated samples leak information from the test set?
-- Which classifiers benefit from augmentation?
-- How large is the improvement?
-- What limitations do the authors mention?
 
 ## How We Could Build on It
 
@@ -258,26 +207,6 @@ However, this paper shows that:
 > Simply replacing a GAN with an LLM is probably not enough to make our project novel.
 
 Therefore, our main contribution should probably come from investigating the effect of synthetic data on **future real-world generalisation**, rather than developing another generation method.
-
-## What We Need to Look For
-
-Focus on:
-
-- Which LLM do they use?
-- Is the LLM fine-tuned or only prompted?
-- How are prompts constructed?
-- What information is provided to the LLM?
-- How are generated URLs validated?
-- How do they remove duplicates?
-- How do they identify low-quality generated samples?
-- How many synthetic samples are generated?
-- What synthetic-to-real ratio is used?
-- Which datasets do they use?
-- How do they split the data?
-- Do they test on future real phishing URLs?
-- Do they test across datasets?
-- Do they compare against simpler augmentation?
-- What limitations do they mention?
 
 ## How We Could Build on It
 
