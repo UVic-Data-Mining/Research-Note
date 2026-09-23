@@ -65,6 +65,15 @@ Here, an interpretable characterization means that the reported relationships ca
 
 High agreement with $1 - f$ is necessary evidence of a useful approximation, but is not sufficient to meet the explanation-focused objective. In particular, a characteristic that predicts non-detection need not be a feature directly used by $f$: it may be correlated with other information. Reported associations must therefore be checked against observed detector outcomes, rather than treated as an exact account of the detector’s internal mechanism.
 
+## 5. Validation and interpretation
+The learned function and discovered relationships are assessed on a protected confirmation portion of the generated collection that is not used to select the diagnostic representation or reported patterns. Known groups of related generated examples are kept together when defining discovery and confirmation partitions. Detector development, diagnostic discovery, and diagnostic confirmation thus have distinct data roles. This is a proposed safeguard against the information leakage and biased evaluation discussed by Arp et al. [2].
+
+Evaluation considers diagnostic agreement separately for flagged and unflagged examples, as well as subgroup coverage, non-detection frequencies, and the persistence of reported associations. Overall agreement alone can conceal failure on the smaller outcome group. If one group is absent or too small to support a comparison, that limitation is reported instead of asserting a reliable distinction.
+
+Conclusions are conditional on the classifier, its fixed decision rule, the source data, and the documented generation setting. Where several classifiers or generation groups are examined, associations are evaluated separately before shared patterns are claimed. Evidence that phishing-feature contributions vary across datasets motivates this caution, but does not establish what will occur in the proposed experiment [5, §§3.5–4]. Generalization to real-world phishing errors requires separate evidence from held-out observations with recorded phishing labels.
+
+The study identifies associations, not causal effects. Predictive explanations do not, on their own, establish that changing a characteristic will change an outcome [6]. The comparison also does not establish that AI authorship causes non-detection. No performance decline, universal weakness, or stable distinguishing pattern is assumed in advance; a finding that apparent associations do not persist is a valid research outcome.
+
 ## 6. References
 [1] Tom M. Mitchell. 1997. *Machine Learning*. McGraw-Hill. Chapter 1, especially §§1.1–1.2. ISBN 978-0-07-042807-2. [Author’s textbook page](https://www.cs.cmu.edu/~tom/mlbook.html).
 
@@ -73,3 +82,7 @@ High agreement with $1 - f$ is necessary evidence of a useful approximation, but
 [3] Alejandro Correa Bahnsen, Ivan Torroledo, Luis David Camacho, and Sergio Villegas. 2018. DeepPhish: Simulating Malicious AI. Author-hosted manuscript, especially §IV-A. [Full text](https://albahnsen.wordpress.com/wp-content/uploads/2018/05/deepphish-simulating-malicious-ai_submitted.pdf).
 
 [4] Osbert Bastani, Carolyn Kim, and Hamsa Bastani. 2019. Interpreting Blackbox Models via Model Extraction. arXiv:1705.08504v6; originally submitted in 2017. [Version consulted](https://arxiv.org/html/1705.08504v6).
+
+[5] Maraz Mia, Darius Derakhshan, and Mir Mehedi A. Pritom. 2024. Can Features for Phishing URL Detection Be Trusted Across Diverse Datasets? A Case Study with Explainable AI. In *11th International Conference on Networking, Systems, and Security (NSysS ’24)*. DOI: [10.1145/3704522.3704532](https://doi.org/10.1145/3704522.3704532). [Author manuscript](https://arxiv.org/html/2411.09813v2).
+
+[6] Eleanor Dillon, Jacob LaRiviere, Scott Lundberg, Jonathan Roth, and Vasilis Syrgkanis. n.d. Be careful when interpreting predictive models in search of causal insights. SHAP documentation. [Official documentation](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%20insights.html). Accessed 23 September 2026.
