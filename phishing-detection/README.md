@@ -29,6 +29,19 @@ denote a URL-based phishing classifier, where $f(u) = 1$ means that the classifi
 
 For each diagnostic analysis, $f$ is trained or selected using recorded real-world URL observations and then held fixed, including its preprocessing, parameters, and decision threshold. The synthetic collection $S$ is excluded from that detector’s training and model selection. This separation implements the distinction between model development and evaluation emphasized in security-ML methodology [2, §2.2]. Here, “recorded real-world” describes the source of the observations; it does not assume that their URLs were manually authored.
 
+## 3. Diagnostic outcomes
+For each $u_i \in S$, define the observed diagnostic target as
+
+$$z_i = 1 - f(u_i).$$
+
+Thus, $z_i = 1$ means that the example is not flagged, whereas $z_i = 0$ means that it is flagged. The collection is partitioned into the unflagged and flagged groups, respectively:
+
+$$S_f^{\mathrm{unflagged}} = \lbrace u_i \in S : z_i = 1 \rbrace,$$
+
+$$S_f^{\mathrm{flagged}} = \lbrace u_i \in S : z_i = 0 \rbrace.$$
+
+Both groups contain intended-positive synthetic examples; they differ in the classifier’s response. The diagnostic label $z_i$ must therefore be distinguished from the intended annotation $y_i$ and from the phishing prediction $f(u_i)$.
+
 ## 6. References
 [1] Tom M. Mitchell. 1997. *Machine Learning*. McGraw-Hill. Chapter 1, especially §§1.1–1.2. ISBN 978-0-07-042807-2. [Author’s textbook page](https://www.cs.cmu.edu/~tom/mlbook.html).
 
