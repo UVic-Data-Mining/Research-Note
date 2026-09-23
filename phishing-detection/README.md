@@ -44,9 +44,26 @@ Both groups contain intended-positive synthetic examples; they differ in the cla
 
 An unflagged synthetic example is termed a case of synthetic non-detection, not automatically a verified real-world false negative. A generated string alone does not establish an operational phishing webpage. DeepPhish likewise distinguishes bypassing a detector from successfully stealing credentials [3, §IV-A]. Accordingly, this study measures classifier behaviour, not successful phishing attacks. Its intended-positive synthetic collection cannot, by itself, estimate false-positive rates on real non-phishing observations.
 
+## 4. Learning objective and required output
+The diagnostic observations are
+
+$$D_f = \lbrace (u_i, z_i) \rbrace_{i=1}^{n}.$$
+
+From a discovery portion of these observations, the task is to learn an interpretable function
+
+$$h_f : \mathcal{U} \to \lbrace 0, 1 \rbrace,$$
+
+where $h_f(u) = 1$ predicts non-detection by the fixed classifier and $h_f(u) = 0$ predicts that the classifier flags the example. Its intended approximation, within the evaluated generated-URL setting, is
+
+$$h_f(u) \approx 1 - f(u).$$
+
+The target outcomes are directly observable by evaluating $f$; they are not unknown phishing-status labels. The research task is to learn a useful, interpretable description of their relationship to URL information. This is a diagnostic approximation of model behaviour, consistent with the distinction between a model and an interpretable approximation of its predictions in model-explanation research [4]. It is not a replacement phishing detector or a new claim about the true malicious status of an input.
+
 ## 6. References
 [1] Tom M. Mitchell. 1997. *Machine Learning*. McGraw-Hill. Chapter 1, especially §§1.1–1.2. ISBN 978-0-07-042807-2. [Author’s textbook page](https://www.cs.cmu.edu/~tom/mlbook.html).
 
 [2] Daniel Arp, Erwin Quiring, Feargus Pendlebury, Alexander Warnecke, Fabio Pierazzi, Christian Wressnegger, Lorenzo Cavallaro, and Konrad Rieck. 2022. Dos and Don’ts of Machine Learning in Computer Security. In *31st USENIX Security Symposium*, 3971–3988. [Conference page and open-access paper](https://www.usenix.org/conference/usenixsecurity22/presentation/arp).
 
 [3] Alejandro Correa Bahnsen, Ivan Torroledo, Luis David Camacho, and Sergio Villegas. 2018. DeepPhish: Simulating Malicious AI. Author-hosted manuscript, especially §IV-A. [Full text](https://albahnsen.wordpress.com/wp-content/uploads/2018/05/deepphish-simulating-malicious-ai_submitted.pdf).
+
+[4] Osbert Bastani, Carolyn Kim, and Hamsa Bastani. 2019. Interpreting Blackbox Models via Model Extraction. arXiv:1705.08504v6; originally submitted in 2017. [Version consulted](https://arxiv.org/html/1705.08504v6).
