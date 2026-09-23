@@ -59,6 +59,12 @@ $$h_f(u) \approx 1 - f(u).$$
 
 The target outcomes are directly observable by evaluating $f$; they are not unknown phishing-status labels. The research task is to learn a useful, interpretable description of their relationship to URL information. This is a diagnostic approximation of model behaviour, consistent with the distinction between a model and an interpretable approximation of its predictions in model-explanation research [4]. It is not a replacement phishing detector or a new claim about the true malicious status of an input.
 
+The required output comprises the learned diagnostic function and an explicit characterization of the URL properties, or combinations of properties, associated with the fixed classifier’s flagged and unflagged groups. Each reported relationship must describe which observations it applies to, the direction of the association, its coverage, and the observed non-detection frequency relative to a stated comparison group. Supporting uncertainty must accompany quantitative comparisons.
+
+Here, an interpretable characterization means that the reported relationships can be expressed in understandable terms linked to properties of the URL string, rather than only as an opaque score or a list of individual URLs. The particular representation is left open. URL-derived information is the explanatory input; the detector’s prediction and score are not supplied as input variables to $h_f$. Predictions from $f$ are used only to define and assess diagnostic outcomes.
+
+High agreement with $1 - f$ is necessary evidence of a useful approximation, but is not sufficient to meet the explanation-focused objective. In particular, a characteristic that predicts non-detection need not be a feature directly used by $f$: it may be correlated with other information. Reported associations must therefore be checked against observed detector outcomes, rather than treated as an exact account of the detector’s internal mechanism.
+
 ## 6. References
 [1] Tom M. Mitchell. 1997. *Machine Learning*. McGraw-Hill. Chapter 1, especially §§1.1–1.2. ISBN 978-0-07-042807-2. [Author’s textbook page](https://www.cs.cmu.edu/~tom/mlbook.html).
 
