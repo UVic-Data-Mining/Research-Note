@@ -79,10 +79,10 @@ The study identifies associations, not causal effects. Predictive explanations d
 
 [2] Daniel Arp, Erwin Quiring, Feargus Pendlebury, Alexander Warnecke, Fabio Pierazzi, Christian Wressnegger, Lorenzo Cavallaro, and Konrad Rieck. 2022. Dos and Don’ts of Machine Learning in Computer Security. In *31st USENIX Security Symposium*, 3971–3988. [Conference page and open-access paper](https://www.usenix.org/conference/usenixsecurity22/presentation/arp).
 
-[3] Alejandro Correa Bahnsen, Ivan Torroledo, Luis David Camacho, and Sergio Villegas. 2018. DeepPhish: Simulating Malicious AI. Author-hosted manuscript, especially §IV-A. [Full text](https://albahnsen.wordpress.com/wp-content/uploads/2018/05/deepphish-simulating-malicious-ai_submitted.pdf).
+[3] Alejandro Correa Bahnsen, Ivan Torroledo, Luis David Camacho, and Sergio Villegas. 2018. *DeepPhish: Simulating Malicious AI*. Author-hosted manuscript, especially §IV-A. [Full text](https://albahnsen.wordpress.com/wp-content/uploads/2018/05/deepphish-simulating-malicious-ai_submitted.pdf).
 
-[4] Osbert Bastani, Carolyn Kim, and Hamsa Bastani. 2019. Interpreting Blackbox Models via Model Extraction. arXiv:1705.08504v6; originally submitted in 2017. [Version consulted](https://arxiv.org/html/1705.08504v6).
+[4] Osbert Bastani, Carolyn Kim, and Hamsa Bastani. 2019. *Interpreting Blackbox Models via Model Extraction*. arXiv:1705.08504v6; originally submitted in 2017. [Version consulted](https://arxiv.org/html/1705.08504v6).
 
 [5] Maraz Mia, Darius Derakhshan, and Mir Mehedi A. Pritom. 2024. Can Features for Phishing URL Detection Be Trusted Across Diverse Datasets? A Case Study with Explainable AI. In *11th International Conference on Networking, Systems, and Security (NSysS ’24)*. DOI: [10.1145/3704522.3704532](https://doi.org/10.1145/3704522.3704532). [Author manuscript](https://arxiv.org/html/2411.09813v2).
 
-[6] Eleanor Dillon, Jacob LaRiviere, Scott Lundberg, Jonathan Roth, and Vasilis Syrgkanis. n.d. Be careful when interpreting predictive models in search of causal insights. SHAP documentation. [Official documentation](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%20insights.html). Accessed 23 September 2026.
+[6] Eleanor Dillon, Jacob LaRiviere, Scott Lundberg, Jonathan Roth, and Vasilis Syrgkanis. n.d. *Be careful when interpreting predictive models in search of causal insights*. SHAP documentation. [Official documentation](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%20insights.html). Accessed 23 September 2026.
