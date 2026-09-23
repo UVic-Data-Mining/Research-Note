@@ -20,7 +20,7 @@
 
 | Member | Contribution |
 |---|---|
-| **Alicia** | Coordinated the overall Milestone 1 submission and managed the GitHub repository. Drafted the abstract and organized the overall structure and flow of the proposal. |
-| **Jay** | Helped refine the project idea and drafted the motivating example and example instance sections. Also contributed to reviewing and organizing the overall proposal. |
-| **Anson** | Contributed to developing the project idea and drafted the formal problem definition. |
-| **Owen** | Contributed to developing the project idea and drafted the introduction and motivation sections. |
+| **Alicia** | Coordinated the Milestone 1 submission and managed the GitHub repository. Drafted the abstract and organized the overall structure and flow of the proposal. |
+| **Jay** | Contributed to refining the research idea and drafted the motivating example and example instance. Also helped review and organize the overall proposal. |
+| **Anson** | Contributed to refining the research idea and drafted the formal problem definition, including its mathematical formulation. |
+| **Owen** | Contributed to refining the research idea and drafted the introduction and motivation, including research on the background and practical significance of the problem. |
