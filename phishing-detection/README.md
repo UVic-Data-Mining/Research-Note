@@ -42,7 +42,11 @@ $$S_f^{\mathrm{flagged}} = \lbrace u_i \in S : z_i = 0 \rbrace.$$
 
 Both groups contain intended-positive synthetic examples; they differ in the classifier’s response. The diagnostic label $z_i$ must therefore be distinguished from the intended annotation $y_i$ and from the phishing prediction $f(u_i)$.
 
+An unflagged synthetic example is termed a case of synthetic non-detection, not automatically a verified real-world false negative. A generated string alone does not establish an operational phishing webpage. DeepPhish likewise distinguishes bypassing a detector from successfully stealing credentials [3, §IV-A]. Accordingly, this study measures classifier behaviour, not successful phishing attacks. Its intended-positive synthetic collection cannot, by itself, estimate false-positive rates on real non-phishing observations.
+
 ## 6. References
 [1] Tom M. Mitchell. 1997. *Machine Learning*. McGraw-Hill. Chapter 1, especially §§1.1–1.2. ISBN 978-0-07-042807-2. [Author’s textbook page](https://www.cs.cmu.edu/~tom/mlbook.html).
 
 [2] Daniel Arp, Erwin Quiring, Feargus Pendlebury, Alexander Warnecke, Fabio Pierazzi, Christian Wressnegger, Lorenzo Cavallaro, and Konrad Rieck. 2022. Dos and Don’ts of Machine Learning in Computer Security. In *31st USENIX Security Symposium*, 3971–3988. [Conference page and open-access paper](https://www.usenix.org/conference/usenixsecurity22/presentation/arp).
+
+[3] Alejandro Correa Bahnsen, Ivan Torroledo, Luis David Camacho, and Sergio Villegas. 2018. DeepPhish: Simulating Malicious AI. Author-hosted manuscript, especially §IV-A. [Full text](https://albahnsen.wordpress.com/wp-content/uploads/2018/05/deepphish-simulating-malicious-ai_submitted.pdf).
