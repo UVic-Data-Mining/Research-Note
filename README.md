@@ -5,5 +5,8 @@
 ## Notes
 - [Formal Problem Definition: Interpretable analysis of non-detection on AI-generated phishing-like URLs](phishing-detection/README.md)
 
+## Proposal link
+- [proposal link](./Milestone1%20Proposal)
+
 ## Project Work Log
 - [project work log for Milestone 1](projectwork_M1.md)
