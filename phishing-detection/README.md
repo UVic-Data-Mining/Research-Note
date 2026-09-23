@@ -14,5 +14,12 @@ This project investigates which URL characteristics are associated with a phishi
 
 We formulate this as a learning problem by specifying the available observations, the target function, and the criteria for evaluating the learned characterization, without prescribing a particular algorithm or feature set [1, §§1.1–1.2]. The definitions below specify the proposed study rather than assert experimental findings.
 
+## 2. Input space and fixed classifier
+Let $\mathcal{U}$ denote the space of syntactically valid URL strings within the study’s documented input scope, and let
+
+$$S = \lbrace u_1, u_2, \ldots, u_n \rbrace \subseteq \mathcal{U}, \quad n > 0,$$
+
+be a collection of AI-generated phishing-like examples. Each $u_i$ carries an intended-positive annotation $y_i = 1$, indicating its inclusion as a synthetic phishing test example. This annotation records the intended class, not independently verified malicious activity. Inclusion criteria and generation provenance are documented, and acceptance into $S$ is not determined by whether the evaluated classifier flags an example.
+
 ## 6. References
 [1] Tom M. Mitchell. 1997. *Machine Learning*. McGraw-Hill. Chapter 1, especially §§1.1–1.2. ISBN 978-0-07-042807-2. [Author’s textbook page](https://www.cs.cmu.edu/~tom/mlbook.html).
