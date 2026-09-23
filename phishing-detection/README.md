@@ -12,7 +12,7 @@ Table of content:
 ## 1. Problem and scope
 This project investigates which URL characteristics are associated with a phishing classifier not flagging AI-generated phishing-like examples. Given a collection of generated URL strings and the responses of a fixed classifier, the task is to learn an interpretable diagnostic function that characterizes the distinction between flagged and unflagged examples. The objective is not merely to count missed examples, but to identify recurring associations and assess whether they persist on held-out observations.
 
-We formulate this as a learning problem by specifying the available observations, the target function, and the criteria for evaluating the learned characterization, without prescribing a particular algorithm or feature set [1, §§1.1–1.2]. The definitions below specify the proposed study rather than assert experimental findings.
+We formulate this as a learning problem by specifying the available observations, the target function, and the criteria for evaluating the learned characterization, without prescribing a particular algorithm or feature set [1, Secs. 1.1–1.2]. The definitions below specify the proposed study rather than assert experimental findings.
 
 ## 2. Input space and fixed classifier
 Let $\mathcal{U}$ denote the space of syntactically valid URL strings within the study’s documented input scope, and let
@@ -27,7 +27,7 @@ $$f : \mathcal{U} \to \lbrace 0, 1 \rbrace$$
 
 denote a URL-based phishing classifier, where $f(u) = 1$ means that the classifier flags $u$ as phishing and $f(u) = 0$ means that it predicts $u$ to be non-phishing. The latter prediction does not establish that the associated resource is safe.
 
-For each diagnostic analysis, $f$ is trained or selected using recorded real-world URL observations and then held fixed, including its preprocessing, parameters, and decision threshold. The synthetic collection $S$ is excluded from that detector’s training and model selection. This separation implements the distinction between model development and evaluation emphasized in security-ML methodology [2, §2.2]. Here, “recorded real-world” describes the source of the observations; it does not assume that their URLs were manually authored.
+For each diagnostic analysis, $f$ is trained or selected using recorded real-world URL observations and then held fixed, including its preprocessing, parameters, and decision threshold. The synthetic collection $S$ is excluded from that detector’s training and model selection. This separation implements the distinction between model development and evaluation emphasized in security-ML methodology [2, Sec. 2.2]. Here, “recorded real-world” describes the source of the observations; it does not assume that their URLs were manually authored.
 
 ## 3. Diagnostic outcomes
 For each $u_i \in S$, define the observed diagnostic target as
@@ -42,7 +42,7 @@ $$S_f^{\mathrm{flagged}} = \lbrace u_i \in S : z_i = 0 \rbrace.$$
 
 Both groups contain intended-positive synthetic examples; they differ in the classifier’s response. The diagnostic label $z_i$ must therefore be distinguished from the intended annotation $y_i$ and from the phishing prediction $f(u_i)$.
 
-An unflagged synthetic example is termed a case of synthetic non-detection, not automatically a verified real-world false negative. A generated string alone does not establish an operational phishing webpage. DeepPhish likewise distinguishes bypassing a detector from successfully stealing credentials [3, §IV-A]. Accordingly, this study measures classifier behaviour, not successful phishing attacks. Its intended-positive synthetic collection cannot, by itself, estimate false-positive rates on real non-phishing observations.
+An unflagged synthetic example is termed a case of synthetic non-detection, not automatically a verified real-world false negative. A generated string alone does not establish an operational phishing webpage. DeepPhish likewise distinguishes bypassing a detector from successfully stealing credentials [3, Sec. IV-A]. Accordingly, this study measures classifier behaviour, not successful phishing attacks. Its intended-positive synthetic collection cannot, by itself, estimate false-positive rates on real non-phishing observations.
 
 ## 4. Learning objective and required output
 The diagnostic observations are
@@ -70,19 +70,19 @@ The learned function and discovered relationships are assessed on a protected co
 
 Evaluation considers diagnostic agreement separately for flagged and unflagged examples, as well as subgroup coverage, non-detection frequencies, and the persistence of reported associations. Overall agreement alone can conceal failure on the smaller outcome group. If one group is absent or too small to support a comparison, that limitation is reported instead of asserting a reliable distinction.
 
-Conclusions are conditional on the classifier, its fixed decision rule, the source data, and the documented generation setting. Where several classifiers or generation groups are examined, associations are evaluated separately before shared patterns are claimed. Evidence that phishing-feature contributions vary across datasets motivates this caution, but does not establish what will occur in the proposed experiment [5, §§3.5–4]. Generalization to real-world phishing errors requires separate evidence from held-out observations with recorded phishing labels.
+Conclusions are conditional on the classifier, its fixed decision rule, the source data, and the documented generation setting. Where several classifiers or generation groups are examined, associations are evaluated separately before shared patterns are claimed. Evidence that phishing-feature contributions vary across datasets motivates this caution, but does not establish what will occur in the proposed experiment [5, Secs. 3.5–4]. Generalization to real-world phishing errors requires separate evidence from held-out observations with recorded phishing labels.
 
 The study identifies associations, not causal effects. Predictive explanations do not, on their own, establish that changing a characteristic will change an outcome [6]. The comparison also does not establish that AI authorship causes non-detection. No performance decline, universal weakness, or stable distinguishing pattern is assumed in advance; a finding that apparent associations do not persist is a valid research outcome.
 
 ## 6. References
-[1] Tom M. Mitchell. 1997. *Machine Learning*. McGraw-Hill. Chapter 1, especially §§1.1–1.2. ISBN 978-0-07-042807-2. [Author’s textbook page](https://www.cs.cmu.edu/~tom/mlbook.html).
+[1] T. M. Mitchell, *Machine Learning*. New York, NY, USA: McGraw-Hill, 1997, ch. 1.
 
-[2] Daniel Arp, Erwin Quiring, Feargus Pendlebury, Alexander Warnecke, Fabio Pierazzi, Christian Wressnegger, Lorenzo Cavallaro, and Konrad Rieck. 2022. Dos and Don’ts of Machine Learning in Computer Security. In *31st USENIX Security Symposium*, 3971–3988. [Conference page and open-access paper](https://www.usenix.org/conference/usenixsecurity22/presentation/arp).
+[2] D. Arp *et al.*, “Dos and don’ts of machine learning in computer security,” in *Proc. 31st USENIX Secur. Symp.*, Boston, MA, USA, 2022, pp. 3971–3988. [Online]. Available: <https://www.usenix.org/conference/usenixsecurity22/presentation/arp>
 
-[3] Alejandro Correa Bahnsen, Ivan Torroledo, Luis David Camacho, and Sergio Villegas. 2018. *DeepPhish: Simulating Malicious AI*. Author-hosted manuscript, especially §IV-A. [Full text](https://albahnsen.wordpress.com/wp-content/uploads/2018/05/deepphish-simulating-malicious-ai_submitted.pdf).
+[3] A. Correa Bahnsen, I. Torroledo, L. D. Camacho, and S. Villegas, “DeepPhish: Simulating malicious AI,” unpublished manuscript, 2018. [Online]. Available: <https://albahnsen.wordpress.com/wp-content/uploads/2018/05/deepphish-simulating-malicious-ai_submitted.pdf>
 
-[4] Osbert Bastani, Carolyn Kim, and Hamsa Bastani. 2019. *Interpreting Blackbox Models via Model Extraction*. arXiv:1705.08504v6; originally submitted in 2017. [Version consulted](https://arxiv.org/html/1705.08504v6).
+[4] O. Bastani, C. Kim, and H. Bastani, “Interpreting blackbox models via model extraction,” 2017, *arXiv:1705.08504v6*. [Online]. Available: <https://arxiv.org/abs/1705.08504v6>
 
-[5] Maraz Mia, Darius Derakhshan, and Mir Mehedi A. Pritom. 2024. Can Features for Phishing URL Detection Be Trusted Across Diverse Datasets? A Case Study with Explainable AI. In *11th International Conference on Networking, Systems, and Security (NSysS ’24)*. DOI: [10.1145/3704522.3704532](https://doi.org/10.1145/3704522.3704532). [Author manuscript](https://arxiv.org/html/2411.09813v2).
+[5] M. Mia, D. Derakhshan, and M. M. A. Pritom, “Can features for phishing URL detection be trusted across diverse datasets? A case study with explainable AI,” in *Proc. 11th Int. Conf. Netw., Syst., Secur. (NSysS ’24)*, Khulna, Bangladesh, 2024, pp. 137–145, doi: [10.1145/3704522.3704532](https://doi.org/10.1145/3704522.3704532).
 
-[6] Eleanor Dillon, Jacob LaRiviere, Scott Lundberg, Jonathan Roth, and Vasilis Syrgkanis. n.d. *Be careful when interpreting predictive models in search of causal insights*. SHAP documentation. [Official documentation](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%20insights.html). Accessed 23 September 2026.
+[6] E. Dillon, J. LaRiviere, S. Lundberg, J. Roth, and V. Syrgkanis, “Be careful when interpreting predictive models in search of causal insights,” *SHAP Documentation*. Accessed: Sep. 23, 2026. [Online]. Available: <https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%20insights.html>
