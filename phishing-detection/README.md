@@ -21,5 +21,15 @@ $$S = \lbrace u_1, u_2, \ldots, u_n \rbrace \subseteq \mathcal{U}, \quad n > 0,$
 
 be a collection of AI-generated phishing-like examples. Each $u_i$ carries an intended-positive annotation $y_i = 1$, indicating its inclusion as a synthetic phishing test example. This annotation records the intended class, not independently verified malicious activity. Inclusion criteria and generation provenance are documented, and acceptance into $S$ is not determined by whether the evaluated classifier flags an example.
 
+Let
+
+$$f : \mathcal{U} \to \lbrace 0, 1 \rbrace$$
+
+denote a URL-based phishing classifier, where $f(u) = 1$ means that the classifier flags $u$ as phishing and $f(u) = 0$ means that it predicts $u$ to be non-phishing. The latter prediction does not establish that the associated resource is safe.
+
+For each diagnostic analysis, $f$ is trained or selected using recorded real-world URL observations and then held fixed, including its preprocessing, parameters, and decision threshold. The synthetic collection $S$ is excluded from that detector’s training and model selection. This separation implements the distinction between model development and evaluation emphasized in security-ML methodology [2, §2.2]. Here, “recorded real-world” describes the source of the observations; it does not assume that their URLs were manually authored.
+
 ## 6. References
 [1] Tom M. Mitchell. 1997. *Machine Learning*. McGraw-Hill. Chapter 1, especially §§1.1–1.2. ISBN 978-0-07-042807-2. [Author’s textbook page](https://www.cs.cmu.edu/~tom/mlbook.html).
+
+[2] Daniel Arp, Erwin Quiring, Feargus Pendlebury, Alexander Warnecke, Fabio Pierazzi, Christian Wressnegger, Lorenzo Cavallaro, and Konrad Rieck. 2022. Dos and Don’ts of Machine Learning in Computer Security. In *31st USENIX Security Symposium*, 3971–3988. [Conference page and open-access paper](https://www.usenix.org/conference/usenixsecurity22/presentation/arp).
