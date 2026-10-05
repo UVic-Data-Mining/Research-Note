@@ -51,6 +51,10 @@ B17 denotes Bahnsen (2017) [2]; H–Y is Hannousse–Yahiouche [1]. Aljofey is t
 
 Outside labels name whole sets; inside labels name exact combinations. “No selected configuration” applies only to its region. All nine plotted variants use U; empty regions are not literature-wide absence claims. Areas do not encode cost or performance.
 
+Proposed output. Define $d = 1 - f(u)$ for a fixed detector $f$: $f(u) = 1$ denotes flagged; $d = 1$ denotes unflagged. Learn $g$ from URL properties; report a condition, coverage, non-detection rate, baseline, uncertainty and separate confirmation. Resolve overlapping rules, assess both outcomes and keep related generation groups together. Synthetic non-detection is not a verified false negative; association is not causation.
+
+Source scope. This condensation preserves the supplied review’s qualifications: Rashid [11] is excerpt-supported; Pham [9] has reporting ambiguities. Source checks are not experimental reproduction or a complete dataset audit.
+
 ## 7. References
 [1] A. Hannousse and S. Yahiouche. 2021. Towards benchmark datasets for machine learning based website phishing detection: An experimental study. *Engineering Applications of Artificial Intelligence* 104, 104347.
 
