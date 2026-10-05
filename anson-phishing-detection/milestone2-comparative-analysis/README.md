@@ -1,6 +1,15 @@
 # Comparative Analysis of Phishing Detection
 ## Interpretable analysis of non-detection on AI-generated phishing-like URLs
 
+Table of content:
+1. [Comparison framework](#1-comparison-framework)
+2. [Detection: representation versus information access](#2-detection-representation-versus-information-access)
+3. [Generation and robustness: compare the intervention and error](#3-generation-and-robustness-compare-the-intervention-and-error)
+4. [Diagnosis: from attribution to confirmed groups](#4-diagnosis-from-attribution-to-confirmed-groups)
+5. [Representative approaches: evidence and boundaries](#5-representative-approaches-evidence-and-boundaries)
+6. [Information overlap and project implications](#6-information-overlap-and-project-implications)
+7. [References](#7-references)
+
 ## 1. Comparison framework
 We compare the hierarchy’s overlapping research roles: detection (D1–D2), generation for evaluation or training (S1–S2), and distribution shift, stress testing and diagnosis (E1–E3). The questions are what a method observes, how it processes that evidence, what its experiment establishes, and what remains unresolved. Table 1 and Figure 1 support this comparison; they are not a cross-paper accuracy ranking. A learned representation changes the encoding of information, whereas an extra information source changes what the system can observe.
 
