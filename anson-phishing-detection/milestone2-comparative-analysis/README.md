@@ -40,7 +40,18 @@ Table 1. Configuration-specific comparison. D1: URL string; D2: additional evide
 
 Comparative reading. Evidence expansion addresses missing observations; representation learning changes their encoding; augmentation changes training; diagnostic analysis changes the output sought. An absence of a particular analysis is a scope difference, not automatically a defect or a novel gap.
 
-## 6. References
+## 6. Information overlap and project implications
+![Figure 1. Information overlap Venn diagram](figures/figure1-information-overlap-venn.png)
+
+**Figure 1. Nine selected detector configurations [1, 2, 3, 4, 5, 6, 7, 14].**
+
+U is candidate URL/hostname information; W is HTML, content or appearance; A is additional resolution/service measurements or explicit references. Redirect measurements and stored brand assets count as A; learned weights and label sources do not.
+
+B17 denotes Bahnsen (2017) [2]; H–Y is Hannousse–Yahiouche [1]. Aljofey is the combined model [5]; Mia is the 20-common-feature experiment [14]. Generators, benchmarks and general diagnostic tools are not plotted.
+
+Outside labels name whole sets; inside labels name exact combinations. “No selected configuration” applies only to its region. All nine plotted variants use U; empty regions are not literature-wide absence claims. Areas do not encode cost or performance.
+
+## 7. References
 [1] A. Hannousse and S. Yahiouche. 2021. Towards benchmark datasets for machine learning based website phishing detection: An experimental study. *Engineering Applications of Artificial Intelligence* 104, 104347.
 
 [2] A. Correa Bahnsen *et al.* 2017. Classifying Phishing URLs Using Recurrent Neural Networks. *APWG eCrime*, 1–8.
