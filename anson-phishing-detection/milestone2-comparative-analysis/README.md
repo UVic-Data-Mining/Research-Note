@@ -9,7 +9,10 @@ Hannousse–Yahiouche [1] compare 87 URL, content and external-service features 
 
 Aljofey et al. [5] combine URL encoding, HTML text-fragment weights (TF–IDF), and hyperlink/login features using XGBoost (boosted decision trees). They avoid third-party service features, not HTML acquisition; separate within-dataset tests are not cross-dataset transfer. Phishpedia [6] instead checks logo/brand and domain consistency. PhishIntention [7] adds credential-taking evidence and interaction. Its two-month field study reports 139 versus 1,033 false alerts, but also 1,942 versus 2,071 confirmed detections. Those counts do not establish deployment recall. Richer evidence addresses ambiguities that bare generated strings cannot resolve, while adding acquisition and reference dependencies.
 
-## 3. References
+## 3. Generation and robustness: compare the intervention and error
+DeepPhish [8] evaluates actor-associated LSTM-generated URLs against an existing detector and already analyzes structures and strategies. Its two reported non-blocked proportions increase from 0.69% to 20.90% and from 4.91% to 36.28%; these are experiment-specific, not credential-theft rates. Pham et al. [9] (Section 4.3) instead retrain RF/LSTM classifiers with augmented data and test on a common set. PhishHaven [10] already compares conventional and generated characteristics; its URL-expansion stage makes the full pipeline more than supplied-string processing.
+
+## 4. References
 [1] A. Hannousse and S. Yahiouche. 2021. Towards benchmark datasets for machine learning based website phishing detection: An experimental study. *Engineering Applications of Artificial Intelligence* 104, 104347.
 
 [2] A. Correa Bahnsen *et al.* 2017. Classifying Phishing URLs Using Recurrent Neural Networks. *APWG eCrime*, 1–8.
@@ -23,3 +26,9 @@ Aljofey et al. [5] combine URL encoding, HTML text-fragment weights (TF–IDF), 
 [6] Y. Lin *et al.* 2021. Phishpedia: A Hybrid Deep Learning Based Approach to Visually Identify Phishing Webpages. *USENIX Security*, 3793–3810.
 
 [7] R. Liu *et al.* 2022. Inferring Phishing Intention via Webpage Appearance and Dynamics: A Deep Vision Based Approach. *USENIX Security*, 1633–1650.
+
+[8] A. Correa Bahnsen *et al.* 2018. DeepPhish: Simulating Malicious AI. Author-hosted manuscript.
+
+[9] T. T. T. Pham, T. D. Pham and V. C. Ta. 2023. Evaluation of GAN-based Models for Phishing URL Classifiers. *IJCNIS* 15(2), 1–14.
+
+[10] M. Sameen, K. Han and S. O. Hwang. 2020. PhishHaven—An Efficient Real-Time AI Phishing URLs Detection System. *IEEE Access* 8, 83425–83443.
