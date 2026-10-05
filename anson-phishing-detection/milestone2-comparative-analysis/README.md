@@ -17,7 +17,20 @@ Rashid et al. [11] connect cross-source errors, feature differences and unsuperv
 ## 4. Diagnosis: from attribution to confirmed groups
 Mia et al. [14] use XGBoost and SHAP feature attributions on 20 common features across datasets; indexing and redirects mean this is not lexical-only. Attribution describes prediction contributions, not causation or a subgroup’s non-detection rate [17]. DivExplorer [15] mines frequent property combinations and outcome-rate divergence; support and discretization restrict the search. Ablation measures input-group utility, brand identification names an apparent target, and subgroup characterization describes covered observations and their outcome rates. Our proposed adaptation must define how overlapping rules yield a single diagnostic function $g$; no stable association or accuracy improvement is assumed.
 
-## 5. References
+## 5. Representative approaches: evidence and boundaries
+Table 1. Configuration-specific comparison. D1: URL string; D2: additional evidence; S1/S2: generated data for evaluation/training; E1: shift/adaptation; E2: controlled stress tests; E3: diagnosis. LR: logistic regression; CNN: convolutional neural network; GAN: generative adversarial network. Rows are not a performance ranking.
+
+| Study / role | Inputs and mechanism | Evaluation / contribution | Limitation or scope boundary |
+|---|---|---|---|
+| **Hannousse–Yahiouche [1] · D2** | Engineered URL, content and external-service features; conventional classifiers. | Ten-fold evaluation and extraction timing show information/cost trade-offs. | Within-collection evidence, not external reliability; feature count is not acquisition cost. |
+| **Bahnsen [2] · D1/D2** | URL characters → LSTM; engineered features plus Alexa indicator → RF. | Recorded-URL, training-size and resource comparisons; RF importance reported. | Variants differ in reference access as well as representation; importance is not error characterization. |
+| **URLNet [3] · D1** | Character/word CNN branches, including subword character information. | Timestamp-ordered VirusTotal data: 5M training / 10M test URLs; supports unfamiliar word strings. | Maliciousness is broader than phishing; vocabulary handling is not generated-input robustness. |
+| **URLTran [4] · D1/E2/S2** | Transformer URL model; specified mutations and extra training. | Production week-based splits; matched low-FPR comparison; controlled stress tests. | The gain is protocol-specific; selected mutations do not represent every generator. |
+| **Aljofey [5] · D2** | URL, HTML TF–IDF and hyperlink/login attributes → XGBoost. | Two separate dataset tests; feature-group comparisons without service features. | Requires HTML; separate dataset evaluations are not train-A/test-B transfer. |
+| **Phishpedia [6] · D2** | Logo matching, brand references and candidate-domain consistency. | Webpage/field evaluation; predicts an apparent target brand. | Logo ambiguity, reference coverage and screenshot acquisition remain dependencies. |
+| **PhishIntention [7] · D2** | Brand/credential-taking analysis; selective webpage interaction. | Fewer field false alerts than Phishpedia, alongside fewer confirmed detections. | Not an unqualified recall gain; needs content, interaction and references. |
+
+## 6. References
 [1] A. Hannousse and S. Yahiouche. 2021. Towards benchmark datasets for machine learning based website phishing detection: An experimental study. *Engineering Applications of Artificial Intelligence* 104, 104347.
 
 [2] A. Correa Bahnsen *et al.* 2017. Classifying Phishing URLs Using Recurrent Neural Networks. *APWG eCrime*, 1–8.
