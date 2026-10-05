@@ -14,7 +14,10 @@ DeepPhish [8] evaluates actor-associated LSTM-generated URLs against an existing
 
 Rashid et al. [11] connect cross-source errors, feature differences and unsupervised adaptation, which permits unlabeled target information rather than an untouched target. URLTran [4] also studies controlled transformations and augmented training. Ahamed et al. [13] use rule-based mutations, not learned generation; explanation-stability analysis is logistic-regression-only, and some accuracy losses are false-positive cascades rather than more missed phishing. PhreshPhish v2 [12] supplies temporal information, similarity controls and prevalence-aware benchmarks. These and Arp et al.’s guidance [16] make splits, sampling and information access central to interpretation.
 
-## 4. References
+## 4. Diagnosis: from attribution to confirmed groups
+Mia et al. [14] use XGBoost and SHAP feature attributions on 20 common features across datasets; indexing and redirects mean this is not lexical-only. Attribution describes prediction contributions, not causation or a subgroup’s non-detection rate [17]. DivExplorer [15] mines frequent property combinations and outcome-rate divergence; support and discretization restrict the search. Ablation measures input-group utility, brand identification names an apparent target, and subgroup characterization describes covered observations and their outcome rates. Our proposed adaptation must define how overlapping rules yield a single diagnostic function $g$; no stable association or accuracy improvement is assumed.
+
+## 5. References
 [1] A. Hannousse and S. Yahiouche. 2021. Towards benchmark datasets for machine learning based website phishing detection: An experimental study. *Engineering Applications of Artificial Intelligence* 104, 104347.
 
 [2] A. Correa Bahnsen *et al.* 2017. Classifying Phishing URLs Using Recurrent Neural Networks. *APWG eCrime*, 1–8.
@@ -41,4 +44,10 @@ Rashid et al. [11] connect cross-source errors, feature differences and unsuperv
 
 [13] T. Ahamed *et al.* 2026. An Integrated Evaluation Protocol for Adversarial Robustness, Generalization, and Explanation Stability in URL-Based Phishing Detection. *Frontiers in Computer Science* 8, 1834407.
 
+[14] M. Mia, D. Derakhshan and M. M. A. Pritom. 2024. Can Features for Phishing URL Detection Be Trusted Across Diverse Datasets? A Case Study with Explainable AI. *NSysS 2024*.
+
+[15] E. Pastor, L. de Alfaro and E. Baralis. 2021. Looking for Trouble: Analyzing Classifier Behavior via Pattern Divergence. *ACM SIGMOD*.
+
 [16] D. Arp *et al.* 2022. Dos and Don’ts of Machine Learning in Computer Security. *USENIX Security*, 3971–3988.
+
+[17] E. Dillon *et al.* n.d. Be careful when interpreting predictive models in search of causal insights. *SHAP documentation*; accessed 4 October 2026.
