@@ -12,6 +12,8 @@ Aljofey et al. [5] combine URL encoding, HTML text-fragment weights (TF–IDF), 
 ## 3. Generation and robustness: compare the intervention and error
 DeepPhish [8] evaluates actor-associated LSTM-generated URLs against an existing detector and already analyzes structures and strategies. Its two reported non-blocked proportions increase from 0.69% to 20.90% and from 4.91% to 36.28%; these are experiment-specific, not credential-theft rates. Pham et al. [9] (Section 4.3) instead retrain RF/LSTM classifiers with augmented data and test on a common set. PhishHaven [10] already compares conventional and generated characteristics; its URL-expansion stage makes the full pipeline more than supplied-string processing.
 
+Rashid et al. [11] connect cross-source errors, feature differences and unsupervised adaptation, which permits unlabeled target information rather than an untouched target. URLTran [4] also studies controlled transformations and augmented training. Ahamed et al. [13] use rule-based mutations, not learned generation; explanation-stability analysis is logistic-regression-only, and some accuracy losses are false-positive cascades rather than more missed phishing. PhreshPhish v2 [12] supplies temporal information, similarity controls and prevalence-aware benchmarks. These and Arp et al.’s guidance [16] make splits, sampling and information access central to interpretation.
+
 ## 4. References
 [1] A. Hannousse and S. Yahiouche. 2021. Towards benchmark datasets for machine learning based website phishing detection: An experimental study. *Engineering Applications of Artificial Intelligence* 104, 104347.
 
@@ -32,3 +34,11 @@ DeepPhish [8] evaluates actor-associated LSTM-generated URLs against an existing
 [9] T. T. T. Pham, T. D. Pham and V. C. Ta. 2023. Evaluation of GAN-based Models for Phishing URL Classifiers. *IJCNIS* 15(2), 1–14.
 
 [10] M. Sameen, K. Han and S. O. Hwang. 2020. PhishHaven—An Efficient Real-Time AI Phishing URLs Detection System. *IEEE Access* 8, 83425–83443.
+
+[11] F. Rashid *et al.* 2024. Phishing URL Detection Generalisation Using Unsupervised Domain Adaptation. *Computer Networks* 245, 110398.
+
+[12] T. Dalton *et al.* 2025; v2, 11 February 2026. PhreshPhish: A Real-World, High-Quality, Large-Scale Phishing Website Dataset and Benchmark. *arXiv:2507.10854* (preprint).
+
+[13] T. Ahamed *et al.* 2026. An Integrated Evaluation Protocol for Adversarial Robustness, Generalization, and Explanation Stability in URL-Based Phishing Detection. *Frontiers in Computer Science* 8, 1834407.
+
+[16] D. Arp *et al.* 2022. Dos and Don’ts of Machine Learning in Computer Security. *USENIX Security*, 3971–3988.
