@@ -1,0 +1,234 @@
+\documentclass[sigconf]{acmart}
+% Cleaning
+\pagestyle{fancy} % removes running headers
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
+\fancyhead{}
+\settopmatter{printacmref=false, printfolios=false}
+% Copyright
+\setcopyright{none}
+% \setcopyright{acmcopyright}
+% \setcopyright{acmlicensed}
+% \setcopyright{rightsretained}
+% \setcopyright{usgov}
+% \setcopyright{usgovmixed}
+% \setcopyright{cagov}
+% \setcopyright{cagovmixed}
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\acmDOI{}
+% \linespread{0.97}
+
+% Paragraph spacing
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+%\linespread{0.95}
+\usepackage{mdwlist}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{xurl}
+\usepackage{newunicodechar}
+\newunicodechar{̃}{\~{}}
+
+\usepackage{bibunits}
+
+\begin{document}
+\begin{bibunit}[ACM-Reference-Format]
+\title{Understanding URL Characteristics Behind AI-Generated Phishing Evasion }
+\author{Alicia Kim}
+\affiliation{
+  \institution{University of Victoria}
+%   \streetaddress{P.O. Box 1212}
+%   \city{Toronto}
+%   \state{ON}
+%   \country{Canada}
+%   \postcode{43017-6221}
+}
+\email{kayeonkim@uvic.ca}
+\author{Jay Cheng}
+\affiliation{
+  \institution{University of Victoria}
+%   \streetaddress{P.O. Box 1212}
+%   \city{Toronto}
+%   \state{ON}
+%   \country{Canada}
+%   \postcode{43017-6221}
+}
+\email{jaycheng@uvic.ca}
+\author{Anson Koh}
+\affiliation{
+  \institution{University of Victoria}
+%   \streetaddress{P.O. Box 1212}
+%   \city{Toronto}
+%   \state{ON}
+%   \country{Canada}
+%   \postcode{43017-6221}
+}
+\email{ansonkoh@uvic.ca}
+
+\author{Owen Pritchard}
+% \authornotemark[1]
+% \orcid{0000-0002-6033-6564}
+\affiliation{
+ \institution{University of Victoria}
+%   \city{Fredericton}
+%   \state{NB}
+%   \country{Canada}
+}\email{owenpritchard@uvic.ca}
+
+\begin{abstract}
+AI-generated phishing challenges URL-based detection. This study examines URL characteristics associated with non-detection of AI-generated phishing-like URLs to understand detection limitations. GitHub: \url{https://github.com/UVic-Data-Mining?view_as=public}
+\end{abstract}
+
+\keywords{Phishing Detection, Machine Learning, AI-Generated Phishing}
+
+\maketitle
+
+\section{Introduction}
+
+Generative AI introduces new challenges for URL-based phishing detection. Existing detectors were primarily developed using non-AI-generated URLs, while DeepPhish showed that AI-generated phishing URLs can evade them more often \cite{bahnsen2018deepphish}. However, the URL characteristics associated with such non-detection remain unclear. This project investigates these associations without assuming a specific cause.
+
+\section{Motivation}
+
+Phishing complaints and related economic losses are rapidly increasing in the United States. Reported losses rose from \$18.7 million in 2023 to \$215.8 million in 2025, while business email compromises, which often begin with phishing, caused \$3.05 billion in losses in 2025 \cite{axis2026}. As of March 2025, AI was reportedly used in 82.6\% of phishing attacks, a 53.5\% year-over-year increase \cite{bay2025}. Generative AI further enables scalable and convincing social engineering attacks. Given the practical value of URL-based phishing detection, this study examines URL characteristics associated with the non-detection of AI-generated phishing-like URLs to support more effective and cost-efficient detection methods.
+
+\subsection{Motivating Example}
+
+Consider the AI-generated phishing-like URL
+\url{https://account-verify.example/login}. If the classifier fails to flag it while detecting similar examples, recurring non-detection characteristics may reveal conditions requiring further evaluation.
+
+\section{Problem Definition}
+
+Let $\mathcal{X}$ be the space of valid URL strings and
+$\mathcal{G}=\{u_1,\ldots,u_n\}\subseteq\mathcal{X}$ a collection of
+AI-generated phishing-like URLs. Let $f:\mathcal{X}\rightarrow\{0,1\}$ be a fixed classifier trained on real-world URLs, where $f(u)=1$ indicates phishing and $f(u)=0$ non-phishing. $\mathcal{G}$ is excluded from detector training and model selection \cite{arp2022dos}.
+
+For each $u_i$, define $d_i=1-f(u_i)$, where $d_i=1$ indicates synthetic non-detection. Given $\mathcal{D}=\{(u_i,d_i)\}_{i=1}^{n}$, the task is to learn an interpretable function $g:\mathcal{X}\rightarrow\{0,1\}$ predicting non-detection and characterize URL properties associated with detector outcomes.
+
+Relationships are evaluated on a separate confirmation set to reduce
+information leakage \cite{arp2022dos} and are treated as associations rather than causal effects \cite{dillon_shap_causal}. Relationships that do not persist on held-out examples are also valid outcomes.
+
+\subsection{Running Example}
+
+For $u_i=\texttt{https://account-check.example/login}$, if
+$f(u_i)=0$, then $d_i=1-f(u_i)=1$, indicating a synthetic
+non-detection, which $g(u_i)=1$ predicts.
+
+\section{Team Justification}
+
+Alicia is a Computer Science Master's student with an AI background and experience in RL-based robot navigation and ML model evaluation. Jay is a Year 3 Computer Science student with experience in MCP, ML, and RL, contributing to implementation and experimentation. Anson is a Year 3 Computer Science student interested in applied AI and ML, with backend engineering experience in experimentation, analysis, and reliable systems. Owen brings practical motivation after nearly falling for a phishing attack that imitated his mentor's writing. Together, the team combines technical experience with practical interest in phishing detection.
+
+\putbib[bibliography1]
+\end{bibunit}
+
+
+\appendix
+\section{Original Part without AI content}
+
+\begin{bibunit}[ACM-Reference-Format]
+\vspace{0.5em}
+\section{Abstract}
+
+AI-generated phishing poses new challenges to existing URL-based
+phishing detection systems since the development of generative AI.
+This study evaluates how a phishing classifier trained on real-world
+phishing URLs performs on AI-generated phishing-like URLs and analyzes
+URL characteristics associated with non-detection. The findings
+aim to understand the limitations of existing detection systems and
+provide insights for improving future phishing website detection.
+
+\section{Introduction}
+Generative AI provides malicious actors with means to socially manipulate
+and extort users in new, hard-to-prevent ways \cite{pippig2025,freist2025}.
+Existing methods of URL phishing prevention have been trained and built to
+detect URLs generated without the use of AI, with only approximately
+1--4\% of URLs beating the detection methods \cite{bahnsen2018deepphish}.
+New nefarious AI-powered models like ``DeepPhish'' are able to generate
+URLs which beat existing detection systems approximately 20--35\% of the
+time \cite{bahnsen2018deepphish}. These results are accepted, and being
+actively mitigated by security teams around the world. Our research team's
+goal, however, is to understand the ``threat factors'' which generative AI
+models are using to generate this observed outperformance against existing
+detection methods. Threat factors and existing methods of creating
+nefarious URLs are well researched \cite{kustiawan2025,li2024}, and we
+want to determine which threat factors malicious generative AI systems are
+relying on in hopes of enabling better detection methods.
+\section{Motivation}
+Phishing complaints and related economic losses are rapidly increasing in the United States of America. The FBI reported a 208\% increase in year-over-year losses (\$70 million in 2024 and \$215.8 million in 2025), an 1100\% increase over the last two years (\$18.7 million in 2023), and a \$3.05 billion annual loss in 2025 due to business email compromises (BEC), which often start with a phishing attack \cite{axis2026}. According to KnowBe4, as of March 2025, AI was being utilized in 82.6\% of phishing attacks, representing a 53.5\% year-over-year increase \cite{bay2025}. Phishing has always been around, but generative AI is enabling malicious actors to utilize social engineering in scalable and highly effective ways to manipulate and harm targeted, and often already vulnerable, individuals \cite{schmitt2024,begou2023}.
+
+Malicious URLs are one of the computationally cheapest and easiest ways to detect malicious phishing emails due to the small size of text being evaluated \cite{kustiawan2025}. By identifying the most prominent URL threat factors AI models are using to generate outperformance against prior detection models, we hope to generate information which could enable security researchers to improve existing detection methods and build new detection methods in a cost-effective manner.
+
+\subsection{Motivating Example}
+Consider the AI-generated phishing-like URL
+\url{https://account-verify.example/login}.
+Suppose a phishing classifier does not flag this URL, while it
+successfully flags many other generated phishing-like URLs.
+If characteristics that distinguish recurring non-detections from
+detected examples can be identified, they could help researchers
+identify conditions under which the classifier warrants further
+testing and guide future improvements.
+\section{Problem Definition}
+
+\subsection{Problem and Scope}
+
+This project investigates which URL characteristics are associated
+with a phishing classifier not flagging AI-generated phishing-like examples. The objective is to identify recurring associations and assess whether they persist on held-out observations.
+
+We specifying the available observations, the target function, and the criteria for evaluating the learned characterization, without prescribing a particular algorithm or feature set
+\cite{mitchell1997machine}.
+
+
+\subsection{Input Space and Fixed Classifier}
+
+Let $\mathcal{X}$ denote the space of valid URL strings. Let $\mathcal{G} = \{u_1, u_2, \ldots, u_n\} \subseteq \mathcal{X}$ denote a collection of AI-generated phishing-like examples. Each
+$u_i \in \mathcal{G}$ carries an intended-positive annotation
+$y_i^{\mathrm{int}} = 1$, indicating a synthetic phishing test example. Let $f:\mathcal{X}\rightarrow\{0,1\}$ denote a URL-based phishing classifier, where $f(u)=1$ means $u$ as phishing and $f(u)=0$ means $u$ as non-phishing.
+
+$f$ is trained on real-world URL data and then held fixed. $\mathcal{G}$ is excluded from that detector's training and model selection. This separation implements the distinction between model development and evaluation emphasized in security-ML methodology \cite{arp2022dos}.
+
+
+\subsection{Diagnostic Outcomes}
+
+For each $u_i \in \mathcal{G}$, define the observed diagnostic target as $d_i = 1 - f(u_i).$ Thus, $d_i=1$ means the example is not flagged, whereas $d_i=0$ means it is flagged. The diagnostic label $d_i$ must therefore be distinguished from the intended annotation $y_i^{\mathrm{int}}$ and from the phishing prediction $f(u_i)$. An unflagged synthetic example is termed a synthetic non-detection, rather than a verified real-world false negative, since generated URLs do not necessarily represent operational phishing attacks.
+
+
+\subsection{Learning Objective and Required Output}
+
+The diagnostic observations are $\mathcal{D}=\{(u_i,d_i)\}_{i=1}^{n}.$ From a discovery portion of these observations, we learn an interpretable function $g : \mathcal{X} \rightarrow \{0,1\},$ where $g(u)=1$ predicts non-detection by the fixed classifier and $g(u)=0$ predicts that the classifier flags the example.
+
+The target outcomes are directly observable by evaluating $f$. The research task is to learn a useful, interpretable description of their relationship to URL information. This approximation is used only to explain the classifier's behavior, not to serve as a new phishing detector.
+
+The required output comprises the learned diagnostic function and an explicit characterization of the URL properties, or combinations of properties, associated with the fixed classifier's flagged and unflagged groups. Each reported relationship must describe which observations it applies to, the direction of the association, its coverage, and the observed non-detection frequency relative to a stated comparison group. Supporting uncertainty must accompany quantitative comparisons.
+
+The diagnostic function $g$ uses URL-derived properties to provide an interpretable characterization of the fixed classifier's detection behavior. The identified properties are treated as associations with detector outcomes rather than as direct causes of the classifier's decisions.
+
+
+\subsection{Validation and Interpretation}
+
+The learned function and discovered relationships are assessed on a separate confirmation set to reduce information leakage and biased evaluation.~\cite{arp2022dos}. Evaluation considers diagnostic agreement separately for flagged and unflagged examples. If either group is too small, this is reported as a limitation.
+
+The study identifies associations, not causal effects. Predictive explanations do not, on their own, establish that changing a characteristic will change an outcome \cite{dillon_shap_causal}. No performance decline, universal weakness, or stable distinguishing pattern is assumed in advance.
+
+
+\subsection{Runing Example}
+For example, Let
+$u_i=\texttt{https://account-check.example/login}$ as AI-generated phishing-like URL. If the fixed classifier produces $f(u_i)=0$, then
+$d_i=1-f(u_i)=1$, indicating a synthetic non-detection.
+The learned diagnostic function aims to predict this outcome from
+URL-derived information, where $g(u_i)=1$ represents a predicted
+non-detection.
+
+\section{Team Justification}
+
+This study aims to analyze the AI-generated phishing which is become a grwoing security issue by using ML. Alicia is a Computer Science Master's student with an undergraduate background in AI. She has previous research includes reinforcement learning based robot navigation, provided experience with training and evaluating AI models. This background aligins with the project, ML based analysis of AI-generated phishing URL detection.
+
+Jay is a Year 3 of Computer Science student with experience working with MCP, Machine Learning and Reinforcement Learning concepts. These experiences give him a relevant technical background for contributing to the project.
+
+Anson is interested in applied AI, machine learning, and building reliable data-driven systems, particularly understanding how models behave in real-world settings and where they can fail. He also have backend software engineering experience from many internships, where he worked with production systems, performance, data, and reliability. He thought this combination of practical engineering experience and interest in AI makes me a good fit for the team, especially for implementing experiments, analysing results, and connecting our findings to realistic system behaviour.
+
+Owen became interested in this topic after nearly falling for a DeepPhish-style attack that closely mimicked his mentor’s writing after their email was compromised. He is also concerned about how similar attacks may affect older family members, which motivates him to contribute to better phishing detection.
+\putbib[bibliography2]
+\end{bibunit}
+
+\end{document}
