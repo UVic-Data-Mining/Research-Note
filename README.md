@@ -11,4 +11,4 @@
 - [proposal link](./Milestone1%20Proposal)
 
 ## Project Work Log
-- [project work log for Milestone 1](projectwork_M1.md)
+- [project work log for Milestone](folder_projectwork)
